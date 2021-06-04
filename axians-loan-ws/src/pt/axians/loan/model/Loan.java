@@ -2,16 +2,15 @@ package pt.axians.loan.model;
 
 import java.util.Objects;
 
-import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
-//@XmlRootElement
-//@XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Loan {
 
-	@XmlElement(name = "tipo")
 	private String type;
-
-	@XmlElement(name = "taxa")
 	private int taxes;
 
 	//JAX-B precisa desse construtor

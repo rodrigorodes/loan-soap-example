@@ -1,13 +1,22 @@
 package pt.axians.loan.model;
 
-//@XmlRootElement
-//@XmlAccessorType(XmlAccessType.FIELD)
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Token {
 
-	//@XmlElement(name = "value")
+	@XmlElement(name = "value", required = true)
 	private String token;
-	
-	//JAX-B precisa desse construtor
+
+//	@XmlJavaTypeAdapter(DateAdapter.class)
+//	@XmlElement(required = true)
+//	private Date dataValidade;
+
+	// JAX-B precisa desse construtor
 	Token() {
 	}
 

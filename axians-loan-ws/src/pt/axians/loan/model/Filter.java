@@ -1,6 +1,8 @@
 package pt.axians.loan.model;
 
-//@XmlRootElement
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Filter {
 
 	private LoanType loanType;

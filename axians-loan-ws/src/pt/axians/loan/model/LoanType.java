@@ -1,12 +1,14 @@
 package pt.axians.loan.model;
 
+import javax.xml.bind.annotation.XmlEnumValue;
+
 public enum LoanType {
 	
-	//@XmlEnumValue("Consigned")
+	@XmlEnumValue("Consigned")
 	CONSIGNED(2, "Consigned"),
-	//@XmlEnumValue("Personal")
+	@XmlEnumValue("Personal")
 	PERSONAL(4, "Personal"),
-	//@XmlEnumValue("Guarantee")
+	@XmlEnumValue("Guarantee")
 	GUARANTEE(3, "Guarantee");
 	
 	private int rate;

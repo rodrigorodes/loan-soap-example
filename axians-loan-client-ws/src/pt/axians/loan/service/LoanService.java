@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.stream.Stream;
 
 import pt.axians.loan.client.AuthorizationFault;
-import pt.axians.loan.client.EmprestimoRequest;
 import pt.axians.loan.client.Filter;
 import pt.axians.loan.client.FilterList;
 import pt.axians.loan.client.Loan;
+import pt.axians.loan.client.LoanRequest;
 import pt.axians.loan.client.LoanType;
 import pt.axians.loan.client.LoanWS;
 import pt.axians.loan.client.LoanWSService;
@@ -22,9 +22,9 @@ public class LoanService {
 				.getLoanWSPort();
 
 		Token token = new Token();
-		token.setToken("AAA");
+		token.setValue("AAA");
 
-		EmprestimoRequest filterRequest = new EmprestimoRequest();
+		LoanRequest filterRequest = new LoanRequest();
 
 		FilterList filterLister = new FilterList();
 		
@@ -35,11 +35,12 @@ public class LoanService {
 				filterLister.getFilter().add(filterOne);
 		     });
 
-		filterRequest.setFiltros(filterLister);
+		filterRequest.setFilters(filterLister);
 
-		List<Loan> loans = loanWSPort.emprestimoRequest(filterRequest, token)
-				.getEmprestimos()
-				.getEmprestimo();
+		List<Loan> loans = loanWSPort
+				.loanRequest(filterRequest, token)
+				.getLoans()
+				.getLoan();
 		
 		return new LoanListDTO(loans);
 
